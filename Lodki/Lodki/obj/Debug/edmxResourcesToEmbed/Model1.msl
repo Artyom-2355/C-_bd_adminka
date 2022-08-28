@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="user84_dbModelStoreContainer" CdmEntityContainer="user84_dbEntities">
+    <EntitySetMapping Name="BD10_Аксессуары">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Аксессуары">
+        <MappingFragment StoreEntitySet="BD10_Аксессуары">
+          <ScalarProperty Name="Код_Аксессуара" ColumnName="Код Аксессуара" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="НДС" ColumnName="НДС" />
+          <ScalarProperty Name="Инвентарь" ColumnName="Инвентарь" />
+          <ScalarProperty Name="Уровень_порядка" ColumnName="Уровень порядка" />
+          <ScalarProperty Name="Набор_заказов" ColumnName="Набор заказов" />
+          <ScalarProperty Name="Код_партнера" ColumnName="Код партнера" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Доставка">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Доставка">
+        <MappingFragment StoreEntitySet="BD10_Доставка">
+          <ScalarProperty Name="Код_доставки" ColumnName="Код доставки" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Код_менеджера" ColumnName="Код менеджера" />
+          <ScalarProperty Name="Код_клиента" ColumnName="Код клиента" />
+          <ScalarProperty Name="Код_лодки" ColumnName="Код лодки" />
+          <ScalarProperty Name="Адрес_доставки" ColumnName="Адрес доставки" />
+          <ScalarProperty Name="Город" ColumnName="Город" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Заказ">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Заказ">
+        <MappingFragment StoreEntitySet="BD10_Заказ">
+          <ScalarProperty Name="Код_заказа" ColumnName="Код заказа" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Внесенный_депозит" ColumnName="Внесенный депозит" />
+          <ScalarProperty Name="Код_доставки" ColumnName="Код доставки" />
+          <ScalarProperty Name="Общая_сумма" ColumnName="Общая сумма" />
+          <ScalarProperty Name="Общая_сумма_с_НДС" ColumnName="Общая сумма с НДС" />
+          <ScalarProperty Name="Разработка_продукта" ColumnName="Разработка продукта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Критерии_доставки">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Критерии_доставки">
+        <MappingFragment StoreEntitySet="BD10_Критерии_доставки">
+          <ScalarProperty Name="Код_критерии_доставки" ColumnName="Код критерии доставки" />
+          <ScalarProperty Name="Код_аксессуара" ColumnName="Код аксессуара" />
+          <ScalarProperty Name="Код_доставки" ColumnName="Код доставки" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Лодка">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Лодка">
+        <MappingFragment StoreEntitySet="BD10_Лодка">
+          <ScalarProperty Name="Код_лодки" ColumnName="Код лодки" />
+          <ScalarProperty Name="Модель" ColumnName="Модель" />
+          <ScalarProperty Name="Тип_лодки" ColumnName="Тип лодки" />
+          <ScalarProperty Name="Количество_мест_дл_грибунов" ColumnName="Количество мест дл грибунов" />
+          <ScalarProperty Name="Мачта" ColumnName="Мачта" />
+          <ScalarProperty Name="Цвет" ColumnName="Цвет" />
+          <ScalarProperty Name="Дерево" ColumnName="Дерево" />
+          <ScalarProperty Name="Базовая_цена" ColumnName="Базовая цена" />
+          <ScalarProperty Name="НДС" ColumnName="НДС" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Лодочные_аксессуары">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Лодочные_аксессуары">
+        <MappingFragment StoreEntitySet="BD10_Лодочные_аксессуары">
+          <ScalarProperty Name="Код_лодочных_аксессуаров" ColumnName="Код лодочных аксессуаров" />
+          <ScalarProperty Name="Код_аксессуара" ColumnName="Код аксессуара" />
+          <ScalarProperty Name="Код_лодки" ColumnName="Код лодки" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Менеджеры">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Менеджеры">
+        <MappingFragment StoreEntitySet="BD10_Менеджеры">
+          <ScalarProperty Name="Код_пользователя" ColumnName="Код пользователя" />
+          <ScalarProperty Name="Код_менеджера" ColumnName="Код менеджера" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Партнеры">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Партнеры">
+        <MappingFragment StoreEntitySet="BD10_Партнеры">
+          <ScalarProperty Name="Код_партнера" ColumnName="Код партнера" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="город" ColumnName="город" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Покупатель">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Покупатель">
+        <MappingFragment StoreEntitySet="BD10_Покупатель">
+          <ScalarProperty Name="Код_пользователя" ColumnName="Код пользователя" />
+          <ScalarProperty Name="Код_покупателя" ColumnName="Код покупателя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата_рождения" />
+          <ScalarProperty Name="Регистрационное_имя" ColumnName="Регистрационное имя" />
+          <ScalarProperty Name="Адресс" ColumnName="Адресс" />
+          <ScalarProperty Name="город" ColumnName="город" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Серия_паспорта" ColumnName="Серия паспорта" />
+          <ScalarProperty Name="Имя_документа" ColumnName="Имя документа" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Счет">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Счет">
+        <MappingFragment StoreEntitySet="BD10_Счет">
+          <ScalarProperty Name="Код_счета" ColumnName="Код счета" />
+          <ScalarProperty Name="Код_заказа" ColumnName="Код заказа" />
+          <ScalarProperty Name="Settled" ColumnName="Settled" />
+          <ScalarProperty Name="Сумма" ColumnName="Сумма" />
+          <ScalarProperty Name="Сумма_НДС" ColumnName="Сумма НДС" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BD10_Пользователь">
+      <EntityTypeMapping TypeName="user84_dbModel.BD10_Пользователь">
+        <MappingFragment StoreEntitySet="BD10_Пользователь">
+          <ScalarProperty Name="Роль" ColumnName="Роль" />
+          <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+          <ScalarProperty Name="Логин" ColumnName="Логин" />
+          <ScalarProperty Name="Код_пользователя" ColumnName="Код пользователя" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

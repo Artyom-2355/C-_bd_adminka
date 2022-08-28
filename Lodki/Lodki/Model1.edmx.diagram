@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d3a00c9f450849f18f98f5e8aefb6b59" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Аксессуары" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Доставка" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Заказ" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Критерии_доставки" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Лодка" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Лодочные_аксессуары" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Менеджеры" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Партнеры" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Покупатель" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Счет" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Аксессуары_BD10_Партнеры" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Критерии_доставки_BD10_Аксессуары" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Лодочные_аксессуары_BD10_Аксессуары" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Доставка_BD10_Лодка" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Доставка_BD10_Менеджеры" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Доставка_BD10_Покупатель" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="user84_dbModel.FK_BD10_Заказ_BD10_Доставка" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Критерии_доставки_BD10_Доставка" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Счет_BD10_Заказ" ManuallyRouted="false" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Лодочные_аксессуары_BD10_Лодка" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="user84_dbModel.BD10_Пользователь" Width="1.5" PointX="0.75" PointY="16.125" />
+        <AssociationConnector Association="user84_dbModel.FK_BD10_Покупатель_BD1_Пользователь" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

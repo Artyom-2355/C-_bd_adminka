@@ -1,0 +1,117 @@
+﻿<Window x:Class="Lodki.Админ"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lodki"
+        mc:Ignorable="d"
+        Title="Админ" Height="650" Width="1000" Background="#FFFFFF"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl  x:Name="Персоны" 
+                     Margin="10,10,10,35" 
+                     Background="#7F916E6E"
+                     SelectionChanged="Персоны_SelectionChanged"
+                     Width="772" Grid.RowSpan="3"
+                     HorizontalAlignment="Left"
+                     BorderBrush="White" >
+
+            <TabItem Header="Клиенты" >
+                <ListView x:Name="ClientListView" 
+                          SelectionChanged="ClientListView_SelectionChanged" 
+                          Margin="2,0,3,0"
+                          Background="#FFF6F2FF">
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Код_покупателя}" />
+                            <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding BD10_Пользователь.Логин}"/>
+                            <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding BD10_Пользователь.Пароль}"/>
+                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Фамилия}"/>
+                            <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Имя}"/>
+                            <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding Дата_рождения}"/>
+                            <GridViewColumn Header="Регистрационное имя" DisplayMemberBinding="{Binding Регистрационное_имя}"/>
+                            <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Адресс}"/>
+                            <GridViewColumn Header="Город" DisplayMemberBinding="{Binding город}"/>
+                            <GridViewColumn Header="Email" DisplayMemberBinding="{Binding email}"/>
+                            <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Телефон}"/>
+                            <GridViewColumn Header="Серияпаспорта" DisplayMemberBinding="{Binding Серия_паспорта}"/>
+                            <GridViewColumn Header="Имя документа" DisplayMemberBinding="{Binding Имя_документа}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+
+            </TabItem>
+            <TabItem Header="Менеджеры">
+
+
+                <ListView x:Name="MenedjrListView"
+                          SelectionChanged="MenedjrListView_SelectionChanged"
+                          Margin="0,-1,0,1">
+                    <ListView.View>
+                        
+                        <GridView>
+
+                            <GridViewColumn  Header="Id" DisplayMemberBinding="{Binding Код_менеджера}"/>
+                            <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding BD10_Пользователь.Логин}"/>
+                            <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding BD10_Пользователь.Пароль}"/>
+                            <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Имя}"/>
+                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Фамилия}"/>
+                        </GridView>
+                      
+                    </ListView.View>
+                </ListView>
+
+            </TabItem>
+
+            <TabItem Header="Товары">
+
+                <ListView x:Name="TovarListView" 
+                          SelectionChanged="TovarListView_SelectionChanged" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Код_лодки}"/>
+                            <GridViewColumn Header="Модель" DisplayMemberBinding="{Binding Модель}"/>
+                            <GridViewColumn Header="Тип_лодки" DisplayMemberBinding="{Binding Тип_лодки}"/>
+                            <GridViewColumn Header="Грибуны" DisplayMemberBinding="{Binding Количество_мест_дл_грибунов}"/>
+                            <GridViewColumn Header="Мачта" DisplayMemberBinding="{Binding Мачта}"/>
+                            <GridViewColumn Header="Цвет" DisplayMemberBinding="{Binding Цвет}"/>
+                            <GridViewColumn Header="Дерево" DisplayMemberBinding="{Binding Дерево}"/>
+                            <GridViewColumn Header="Базовая_цена" DisplayMemberBinding="{Binding Базовая_цена}"/>
+                            <GridViewColumn Header="НДС" DisplayMemberBinding="{Binding НДС}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </TabItem>
+        </TabControl>
+        <Button Content="Добавить" 
+                Template="{StaticResource btTemplate}"
+                HorizontalAlignment="Left"
+                Margin="10,389,0,0"
+                VerticalAlignment="Bottom"
+                Click="ButtonDobav"
+                BorderBrush="#ccdb86"/>
+        <Button Content="Изменить" 
+                Template="{StaticResource btTemplate}"
+                HorizontalAlignment="Left"
+                Margin="96,0,0,0"
+                VerticalAlignment="Bottom" 
+                Click="Button_Click_1"
+                BorderBrush="#edcd75"/>
+        <Button Content="Удалить"
+                HorizontalAlignment="Left"
+                Template="{StaticResource btTemplate}"
+                Margin="183,0,0,0"
+                VerticalAlignment="Bottom"
+                Click="Button_Click" 
+                BorderBrush="#c84e52"/>
+        <StackPanel Orientation='Horizontal'
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Margin="521,106,0,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,321 @@
+﻿<Window x:Class="Lodki.Изменения_админа"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lodki"
+        mc:Ignorable="d"
+        Title="Изменения_админа" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Center" 
+          VerticalAlignment="Center">
+
+        <Label  Style="{StaticResource Label}" 
+                Background="#f6f2ff"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Height="279" Width="510"/>
+        <StackPanel  HorizontalAlignment="Center" 
+                     Orientation="Vertical"  
+                     VerticalAlignment="Center" 
+                     Height="293"  Width="502" >
+
+            <Label x:Name="Лабел" 
+                   Content="Изменение"
+                   VerticalAlignment="Top" 
+                   FontSize="20"
+                   FontWeight="Bold" 
+                   Margin="205,35,164,0"/>
+
+            <StackPanel Orientation='Horizontal' 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal' 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label1" 
+                           Content="Логин"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top"
+                           Width="120"
+                           FontWeight="Medium"
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox1" 
+                             HorizontalAlignment="Left"
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+
+                    <StackPanel Orientation='Horizontal'
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+                        <Label x:Name="Label6"
+                               Content="Пароль"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Width="120"
+                               FontWeight="Medium" 
+                               FontSize="14"/>
+                        <TextBox x:Name="TextBox6"
+                                 HorizontalAlignment="Left"
+                                 Height="23"
+                                 TextWrapping="Wrap"
+                                 VerticalAlignment="Top"
+                                 Width="120"
+                                 Margin="5"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation='Horizontal'
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label2"
+                           Content="Фамилия"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top" 
+                           Width="120"
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox2"
+                             HorizontalAlignment="Left" 
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label20"
+                           Content="Имя"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top"
+                           Width="120" 
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox20" 
+                             HorizontalAlignment="Left" 
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel x:Name="три"
+                        Orientation='Horizontal'
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal' 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label30"
+                           Content="Дата родения"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Width="120"
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox30"
+                             HorizontalAlignment="Left"
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label40"
+                           Content="Рег. имя" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top" 
+                           Width="120" 
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox40"
+                             HorizontalAlignment="Left"
+                             Height="23" 
+                             TextWrapping="Wrap" 
+                             VerticalAlignment="Top" 
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel x:Name="четыре"
+                        Orientation='Horizontal'
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label50" 
+                           Content="Адрес"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top" 
+                           Width="120" FontWeight="Medium"
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox50"
+                             HorizontalAlignment="Left"
+                             Height="23" TextWrapping="Wrap" 
+                             VerticalAlignment="Top" 
+                             Width="120" 
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label60" 
+                           Content="Город"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Width="120" 
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox60"
+                             HorizontalAlignment="Left" 
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel x:Name="пять"
+                        Orientation='Horizontal' 
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label70" 
+                           Content="Email"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top"
+                           Width="120" 
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox70"
+                             HorizontalAlignment="Left"
+                             Height="23" 
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120"
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label80" 
+                           Content="Телефон"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top"
+                           Width="120"
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox80"
+                             HorizontalAlignment="Left"
+                             Height="23"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="120" 
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="шесть"
+                        Orientation='Horizontal' 
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <StackPanel Orientation='Horizontal'
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top"
+                            OpacityMask="White">
+
+                    <Label x:Name="Label90"
+                           Content="Серия паспорта" 
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Width="120"
+                           FontWeight="Medium"
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox90"
+                             HorizontalAlignment="Left"
+                             TextWrapping="Wrap" 
+                             Width="120" 
+                             Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation='Horizontal' 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Top">
+                    <Label x:Name="Label100"
+                           Content="Имя документа"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Width="120"
+                           FontWeight="Medium" 
+                           FontSize="14"/>
+                    <TextBox x:Name="TextBox100"
+                             HorizontalAlignment="Left"
+                             Height="23"
+                             TextWrapping="Wrap" 
+                             VerticalAlignment="Top"
+                             Width="120" 
+                             Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+
+
+
+        </StackPanel>
+        <Button HorizontalAlignment="Right" 
+                Template="{StaticResource btTemplate}"
+                Margin="0,0,10,253"
+                VerticalAlignment="Bottom" 
+                Click="Button_Click"
+                BorderBrush="#c84e52"
+                Content="Выйти" />
+
+        <Button x:Name="Кнопка"
+                Content="Изменить"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Template="{StaticResource btTemplate}"
+                Click="Кнопка_Click" 
+                BorderBrush="#edcd75" 
+                Margin="202,270,216,-7" />
+
+        <ComboBox Name="ComboBox1"
+                  HorizontalAlignment="Left"
+                  Margin="401,55,0,0"
+                  Visibility="Collapsed" 
+                  VerticalAlignment="Top"
+                  Width="120" 
+                  SelectedIndex="0" 
+                  SelectionChanged="ComboBox1_SelectionChanged" >
+            <ComboBoxItem Content="Клиент"/>
+            <ComboBoxItem Content="Менеджер"/>
+        </ComboBox>
+
+    </Grid>
+</Window>

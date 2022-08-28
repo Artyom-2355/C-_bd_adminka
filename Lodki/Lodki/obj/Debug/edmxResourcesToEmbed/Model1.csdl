@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="user84_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BD10_Аксессуары">
+    <Key>
+      <PropertyRef Name="Код_Аксессуара" />
+    </Key>
+    <Property Name="Код_Аксессуара" Type="Int32" Nullable="false" />
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Описание" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Цена" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="НДС" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Инвентарь" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Уровень_порядка" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Набор_заказов" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Код_партнера" Type="Int32" />
+    <NavigationProperty Name="BD10_Партнеры" Relationship="Self.FK_BD10_Аксессуары_BD10_Партнеры" FromRole="BD10_Аксессуары" ToRole="BD10_Партнеры" />
+    <NavigationProperty Name="BD10_Критерии_доставки" Relationship="Self.FK_BD10_Критерии_доставки_BD10_Аксессуары" FromRole="BD10_Аксессуары" ToRole="BD10_Критерии_доставки" />
+    <NavigationProperty Name="BD10_Лодочные_аксессуары" Relationship="Self.FK_BD10_Лодочные_аксессуары_BD10_Аксессуары" FromRole="BD10_Аксессуары" ToRole="BD10_Лодочные_аксессуары" />
+  </EntityType>
+  <EntityType Name="BD10_Доставка">
+    <Key>
+      <PropertyRef Name="Код_доставки" />
+    </Key>
+    <Property Name="Код_доставки" Type="Int32" Nullable="false" />
+    <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Код_менеджера" Type="Int32" />
+    <Property Name="Код_клиента" Type="Int32" />
+    <Property Name="Код_лодки" Type="Int32" />
+    <Property Name="Адрес_доставки" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Город" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BD10_Лодка" Relationship="Self.FK_BD10_Доставка_BD10_Лодка" FromRole="BD10_Доставка" ToRole="BD10_Лодка" />
+    <NavigationProperty Name="BD10_Менеджеры" Relationship="Self.FK_BD10_Доставка_BD10_Менеджеры" FromRole="BD10_Доставка" ToRole="BD10_Менеджеры" />
+    <NavigationProperty Name="BD10_Покупатель" Relationship="Self.FK_BD10_Доставка_BD10_Покупатель" FromRole="BD10_Доставка" ToRole="BD10_Покупатель" />
+    <NavigationProperty Name="BD10_Заказ" Relationship="Self.FK_BD10_Заказ_BD10_Доставка" FromRole="BD10_Доставка" ToRole="BD10_Заказ" />
+    <NavigationProperty Name="BD10_Критерии_доставки" Relationship="Self.FK_BD10_Критерии_доставки_BD10_Доставка" FromRole="BD10_Доставка" ToRole="BD10_Критерии_доставки" />
+  </EntityType>
+  <EntityType Name="BD10_Заказ">
+    <Key>
+      <PropertyRef Name="Код_заказа" />
+    </Key>
+    <Property Name="Код_заказа" Type="Int32" Nullable="false" />
+    <Property Name="Дата" Type="Int32" />
+    <Property Name="Внесенный_депозит" Type="DateTime" Precision="0" />
+    <Property Name="Код_доставки" Type="Int32" />
+    <Property Name="Общая_сумма" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Общая_сумма_с_НДС" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Разработка_продукта" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BD10_Доставка" Relationship="Self.FK_BD10_Заказ_BD10_Доставка" FromRole="BD10_Заказ" ToRole="BD10_Доставка" />
+    <NavigationProperty Name="BD10_Счет" Relationship="Self.FK_BD10_Счет_BD10_Заказ" FromRole="BD10_Заказ" ToRole="BD10_Счет" />
+  </EntityType>
+  <EntityType Name="BD10_Критерии_доставки">
+    <Key>
+      <PropertyRef Name="Код_критерии_доставки" />
+    </Key>
+    <Property Name="Код_критерии_доставки" Type="Int32" Nullable="false" />
+    <Property Name="Код_аксессуара" Type="Int32" />
+    <Property Name="Код_доставки" Type="Int32" />
+    <NavigationProperty Name="BD10_Аксессуары" Relationship="Self.FK_BD10_Критерии_доставки_BD10_Аксессуары" FromRole="BD10_Критерии_доставки" ToRole="BD10_Аксессуары" />
+    <NavigationProperty Name="BD10_Доставка" Relationship="Self.FK_BD10_Критерии_доставки_BD10_Доставка" FromRole="BD10_Критерии_доставки" ToRole="BD10_Доставка" />
+  </EntityType>
+  <EntityType Name="BD10_Лодка">
+    <Key>
+      <PropertyRef Name="Код_лодки" />
+    </Key>
+    <Property Name="Код_лодки" Type="Int32" Nullable="false" />
+    <Property Name="Модель" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Тип_лодки" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Количество_мест_дл_грибунов" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Мачта" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Цвет" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Дерево" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Базовая_цена" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="НДС" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BD10_Доставка" Relationship="Self.FK_BD10_Доставка_BD10_Лодка" FromRole="BD10_Лодка" ToRole="BD10_Доставка" />
+    <NavigationProperty Name="BD10_Лодочные_аксессуары" Relationship="Self.FK_BD10_Лодочные_аксессуары_BD10_Лодка" FromRole="BD10_Лодка" ToRole="BD10_Лодочные_аксессуары" />
+  </EntityType>
+  <EntityType Name="BD10_Лодочные_аксессуары">
+    <Key>
+      <PropertyRef Name="Код_лодочных_аксессуаров" />
+    </Key>
+    <Property Name="Код_лодочных_аксессуаров" Type="Int32" Nullable="false" />
+    <Property Name="Код_аксессуара" Type="Int32" />
+    <Property Name="Код_лодки" Type="Int32" />
+    <NavigationProperty Name="BD10_Аксессуары" Relationship="Self.FK_BD10_Лодочные_аксессуары_BD10_Аксессуары" FromRole="BD10_Лодочные_аксессуары" ToRole="BD10_Аксессуары" />
+    <NavigationProperty Name="BD10_Лодка" Relationship="Self.FK_BD10_Лодочные_аксессуары_BD10_Лодка" FromRole="BD10_Лодочные_аксессуары" ToRole="BD10_Лодка" />
+  </EntityType>
+  <EntityType Name="BD10_Менеджеры">
+    <Key>
+      <PropertyRef Name="Код_менеджера" />
+    </Key>
+    <Property Name="Код_менеджера" Type="Int32" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BD10_Доставка" Relationship="Self.FK_BD10_Доставка_BD10_Менеджеры" FromRole="BD10_Менеджеры" ToRole="BD10_Доставка" />
+    <Property Name="Код_пользователя" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BD10_Партнеры">
+    <Key>
+      <PropertyRef Name="Код_партнера" />
+    </Key>
+    <Property Name="Код_партнера" Type="Int32" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Адрес" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="город" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BD10_Аксессуары" Relationship="Self.FK_BD10_Аксессуары_BD10_Партнеры" FromRole="BD10_Партнеры" ToRole="BD10_Аксессуары" />
+  </EntityType>
+  <EntityType Name="BD10_Покупатель">
+    <Key>
+      <PropertyRef Name="Код_покупателя" />
+    </Key>
+    <Property Name="Код_покупателя" Type="Int32" Nullable="false" />
+    <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Дата_рождения" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Регистрационное_имя" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Адресс" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="город" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Серия_паспорта" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Имя_документа" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BD10_Доставка" Relationship="Self.FK_BD10_Доставка_BD10_Покупатель" FromRole="BD10_Покупатель" ToRole="BD10_Доставка" />
+    <Property Name="Код_пользователя" Type="Int32" />
+    <NavigationProperty Name="BD10_Пользователь" Relationship="user84_dbModel.FK_BD10_Покупатель_BD1_Пользователь" FromRole="BD10_Покупатель" ToRole="BD10_Пользователь" />
+  </EntityType>
+  <EntityType Name="BD10_Счет">
+    <Key>
+      <PropertyRef Name="Код_счета" />
+    </Key>
+    <Property Name="Код_счета" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Код_заказа" Type="Int32" />
+    <Property Name="Settled" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Сумма" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Сумма_НДС" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Дата" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="BD10_Заказ" Relationship="Self.FK_BD10_Счет_BD10_Заказ" FromRole="BD10_Счет" ToRole="BD10_Заказ" />
+  </EntityType>
+  <Association Name="FK_BD10_Аксессуары_BD10_Партнеры">
+    <End Role="BD10_Партнеры" Type="Self.BD10_Партнеры" Multiplicity="0..1" />
+    <End Role="BD10_Аксессуары" Type="Self.BD10_Аксессуары" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Партнеры">
+        <PropertyRef Name="Код_партнера" />
+      </Principal>
+      <Dependent Role="BD10_Аксессуары">
+        <PropertyRef Name="Код_партнера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Критерии_доставки_BD10_Аксессуары">
+    <End Role="BD10_Аксессуары" Type="Self.BD10_Аксессуары" Multiplicity="0..1" />
+    <End Role="BD10_Критерии_доставки" Type="Self.BD10_Критерии_доставки" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Аксессуары">
+        <PropertyRef Name="Код_Аксессуара" />
+      </Principal>
+      <Dependent Role="BD10_Критерии_доставки">
+        <PropertyRef Name="Код_доставки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Лодочные_аксессуары_BD10_Аксессуары">
+    <End Role="BD10_Аксессуары" Type="Self.BD10_Аксессуары" Multiplicity="0..1" />
+    <End Role="BD10_Лодочные_аксессуары" Type="Self.BD10_Лодочные_аксессуары" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Аксессуары">
+        <PropertyRef Name="Код_Аксессуара" />
+      </Principal>
+      <Dependent Role="BD10_Лодочные_аксессуары">
+        <PropertyRef Name="Код_аксессуара" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Доставка_BD10_Лодка">
+    <End Role="BD10_Лодка" Type="Self.BD10_Лодка" Multiplicity="0..1" />
+    <End Role="BD10_Доставка" Type="Self.BD10_Доставка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Лодка">
+        <PropertyRef Name="Код_лодки" />
+      </Principal>
+      <Dependent Role="BD10_Доставка">
+        <PropertyRef Name="Код_лодки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Доставка_BD10_Менеджеры">
+    <End Role="BD10_Менеджеры" Type="Self.BD10_Менеджеры" Multiplicity="0..1" />
+    <End Role="BD10_Доставка" Type="Self.BD10_Доставка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Менеджеры">
+        <PropertyRef Name="Код_менеджера" />
+      </Principal>
+      <Dependent Role="BD10_Доставка">
+        <PropertyRef Name="Код_менеджера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Доставка_BD10_Покупатель">
+    <End Role="BD10_Покупатель" Type="Self.BD10_Покупатель" Multiplicity="0..1" />
+    <End Role="BD10_Доставка" Type="Self.BD10_Доставка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Покупатель">
+        <PropertyRef Name="Код_покупателя" />
+      </Principal>
+      <Dependent Role="BD10_Доставка">
+        <PropertyRef Name="Код_клиента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Заказ_BD10_Доставка">
+    <End Type="Self.BD10_Доставка" Multiplicity="0..1" Role="BD10_Доставка" />
+    <End Type="Self.BD10_Заказ" Multiplicity="*" Role="BD10_Заказ" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Доставка">
+        <PropertyRef Name="Код_доставки" />
+      </Principal>
+      <Dependent Role="BD10_Заказ">
+        <PropertyRef Name="Код_доставки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Критерии_доставки_BD10_Доставка">
+    <End Role="BD10_Доставка" Type="Self.BD10_Доставка" Multiplicity="0..1" />
+    <End Role="BD10_Критерии_доставки" Type="Self.BD10_Критерии_доставки" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Доставка">
+        <PropertyRef Name="Код_доставки" />
+      </Principal>
+      <Dependent Role="BD10_Критерии_доставки">
+        <PropertyRef Name="Код_аксессуара" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Счет_BD10_Заказ">
+    <End Role="BD10_Заказ" Type="Self.BD10_Заказ" Multiplicity="0..1" />
+    <End Role="BD10_Счет" Type="Self.BD10_Счет" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Заказ">
+        <PropertyRef Name="Код_заказа" />
+      </Principal>
+      <Dependent Role="BD10_Счет">
+        <PropertyRef Name="Код_заказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BD10_Лодочные_аксессуары_BD10_Лодка">
+    <End Role="BD10_Лодка" Type="Self.BD10_Лодка" Multiplicity="0..1" />
+    <End Role="BD10_Лодочные_аксессуары" Type="Self.BD10_Лодочные_аксессуары" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Лодка">
+        <PropertyRef Name="Код_лодки" />
+      </Principal>
+      <Dependent Role="BD10_Лодочные_аксессуары">
+        <PropertyRef Name="Код_лодки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="user84_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BD10_Аксессуары" EntityType="Self.BD10_Аксессуары" />
+    <EntitySet Name="BD10_Доставка" EntityType="Self.BD10_Доставка" />
+    <EntitySet Name="BD10_Заказ" EntityType="Self.BD10_Заказ" />
+    <EntitySet Name="BD10_Критерии_доставки" EntityType="Self.BD10_Критерии_доставки" />
+    <EntitySet Name="BD10_Лодка" EntityType="Self.BD10_Лодка" />
+    <EntitySet Name="BD10_Лодочные_аксессуары" EntityType="Self.BD10_Лодочные_аксессуары" />
+    <EntitySet Name="BD10_Менеджеры" EntityType="Self.BD10_Менеджеры" />
+    <EntitySet Name="BD10_Партнеры" EntityType="Self.BD10_Партнеры" />
+    <EntitySet Name="BD10_Покупатель" EntityType="Self.BD10_Покупатель" />
+    <EntitySet Name="BD10_Счет" EntityType="Self.BD10_Счет" />
+    <AssociationSet Name="FK_BD10_Аксессуары_BD10_Партнеры" Association="Self.FK_BD10_Аксессуары_BD10_Партнеры">
+      <End Role="BD10_Партнеры" EntitySet="BD10_Партнеры" />
+      <End Role="BD10_Аксессуары" EntitySet="BD10_Аксессуары" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Критерии_доставки_BD10_Аксессуары" Association="Self.FK_BD10_Критерии_доставки_BD10_Аксессуары">
+      <End Role="BD10_Аксессуары" EntitySet="BD10_Аксессуары" />
+      <End Role="BD10_Критерии_доставки" EntitySet="BD10_Критерии_доставки" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Лодочные_аксессуары_BD10_Аксессуары" Association="Self.FK_BD10_Лодочные_аксессуары_BD10_Аксессуары">
+      <End Role="BD10_Аксессуары" EntitySet="BD10_Аксессуары" />
+      <End Role="BD10_Лодочные_аксессуары" EntitySet="BD10_Лодочные_аксессуары" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Доставка_BD10_Лодка" Association="Self.FK_BD10_Доставка_BD10_Лодка">
+      <End Role="BD10_Лодка" EntitySet="BD10_Лодка" />
+      <End Role="BD10_Доставка" EntitySet="BD10_Доставка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Доставка_BD10_Менеджеры" Association="Self.FK_BD10_Доставка_BD10_Менеджеры">
+      <End Role="BD10_Менеджеры" EntitySet="BD10_Менеджеры" />
+      <End Role="BD10_Доставка" EntitySet="BD10_Доставка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Доставка_BD10_Покупатель" Association="Self.FK_BD10_Доставка_BD10_Покупатель">
+      <End Role="BD10_Покупатель" EntitySet="BD10_Покупатель" />
+      <End Role="BD10_Доставка" EntitySet="BD10_Доставка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Заказ_BD10_Доставка" Association="Self.FK_BD10_Заказ_BD10_Доставка">
+      <End EntitySet="BD10_Доставка" Role="BD10_Доставка" />
+      <End EntitySet="BD10_Заказ" Role="BD10_Заказ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Критерии_доставки_BD10_Доставка" Association="Self.FK_BD10_Критерии_доставки_BD10_Доставка">
+      <End Role="BD10_Доставка" EntitySet="BD10_Доставка" />
+      <End Role="BD10_Критерии_доставки" EntitySet="BD10_Критерии_доставки" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Счет_BD10_Заказ" Association="Self.FK_BD10_Счет_BD10_Заказ">
+      <End Role="BD10_Заказ" EntitySet="BD10_Заказ" />
+      <End Role="BD10_Счет" EntitySet="BD10_Счет" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BD10_Лодочные_аксессуары_BD10_Лодка" Association="Self.FK_BD10_Лодочные_аксессуары_BD10_Лодка">
+      <End Role="BD10_Лодка" EntitySet="BD10_Лодка" />
+      <End Role="BD10_Лодочные_аксессуары" EntitySet="BD10_Лодочные_аксессуары" />
+    </AssociationSet>
+    <EntitySet Name="BD10_Пользователь" EntityType="user84_dbModel.BD10_Пользователь" />
+    <AssociationSet Name="FK_BD10_Покупатель_BD1_Пользователь" Association="user84_dbModel.FK_BD10_Покупатель_BD1_Пользователь">
+      <End Role="BD10_Пользователь" EntitySet="BD10_Пользователь" />
+      <End Role="BD10_Покупатель" EntitySet="BD10_Покупатель" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BD10_Пользователь">
+    <Key>
+      <PropertyRef Name="Код_пользователя" />
+    </Key>
+    <Property Name="Код_пользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Роль" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BD10_Покупатель" Relationship="user84_dbModel.FK_BD10_Покупатель_BD1_Пользователь" FromRole="BD10_Пользователь" ToRole="BD10_Покупатель" />
+  </EntityType>
+  <Association Name="FK_BD10_Покупатель_BD1_Пользователь">
+    <End Type="user84_dbModel.BD10_Пользователь" Role="BD10_Пользователь" Multiplicity="0..1" />
+    <End Type="user84_dbModel.BD10_Покупатель" Role="BD10_Покупатель" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BD10_Пользователь">
+        <PropertyRef Name="Код_пользователя" />
+      </Principal>
+      <Dependent Role="BD10_Покупатель">
+        <PropertyRef Name="Код_пользователя" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
